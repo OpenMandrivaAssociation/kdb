@@ -22,6 +22,7 @@ BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(mariadb)
 BuildRequires:	pkgconfig(libpq)
 BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	python2
 Requires:	%{libname} = %{EVRD}
 
