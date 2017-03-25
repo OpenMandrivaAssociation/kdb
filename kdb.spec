@@ -3,7 +3,7 @@
 %define devname %mklibname KDb3 -d
 
 Name:		kdb
-Version:	3.0.0
+Version:	3.0.1.1
 Release:	1
 Source0:	http://download.kde.org/stable/kdb/src/%{name}-%{version}.tar.xz
 Summary:	Database connectivity and creation framework
