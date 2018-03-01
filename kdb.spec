@@ -3,7 +3,7 @@
 %define devname %mklibname KDb3 -d
 
 Name:		kdb
-Version:	3.0.1.1
+Version:	3.0.2
 Release:	1
 Source0:	http://download.kde.org/stable/kdb/src/%{name}-%{version}.tar.xz
 Summary:	Database connectivity and creation framework
@@ -104,23 +104,24 @@ export PATH=`pwd`:$PATH
 
 %install
 %ninja_install -C build
-%find_lang kdb_mysqldriver_qt
-%find_lang kdb_postgresqldriver_qt
-%find_lang kdb_qt
-%find_lang kdb_sqlitedriver_qt
-%find_lang kdb_sybasedriver_qt
-%find_lang kdb_xbasedriver_qt
+%find_lang kdb_mysqldriver --with-qt
+%find_lang kdb_postgresqldriver --with-qt
+%find_lang kdb --with-qt
+%find_lang kdb_sqlitedriver --with-qt
+#find_lang kdb_sybasedriver --with-qt
+#find_lang kdb_xbasedriver --with-qt
+cat kdb_sqlitedriver.lang >> kdb.lang
 
-%files -f kdb_qt.lang,kdb_sqlitedriver_qt.lang,kdb_sybasedriver_qt.lang,kdb_xbasedriver_qt.lang
+%files -f kdb.lang
 %{_bindir}/*
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
 
-%files mysql -f kdb_mysqldriver_qt.lang
+%files mysql -f kdb_mysqldriver.lang
 %{_libdir}/qt5/plugins/kdb3/kdb_mysqldriver.so
 
-%files postgresql -f kdb_postgresqldriver_qt.lang
+%files postgresql -f kdb_postgresqldriver.lang
 %{_libdir}/qt5/plugins/kdb3/kdb_postgresqldriver.so
 
 %files sqlite
