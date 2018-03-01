@@ -110,7 +110,6 @@ export PATH=`pwd`:$PATH
 %find_lang kdb_sqlitedriver --with-qt
 #find_lang kdb_sybasedriver --with-qt
 #find_lang kdb_xbasedriver --with-qt
-cat kdb_sqlitedriver.lang >> kdb.lang
 
 %files -f kdb.lang
 %{_bindir}/*
@@ -124,7 +123,7 @@ cat kdb_sqlitedriver.lang >> kdb.lang
 %files postgresql -f kdb_postgresqldriver.lang
 %{_libdir}/qt5/plugins/kdb3/kdb_postgresqldriver.so
 
-%files sqlite
+%files sqlite -f kdb_sqlitedriver.lang
 %{_libdir}/qt5/plugins/kdb3/kdb_sqlitedriver.so
 %{_libdir}/qt5/plugins/kdb3/sqlite3/kdb_sqlite_icu.so
 
