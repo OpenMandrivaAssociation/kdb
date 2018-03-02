@@ -6,6 +6,7 @@ Name:		kdb
 Version:	3.0.2
 Release:	1
 Source0:	http://download.kde.org/stable/kdb/src/%{name}-%{version}.tar.xz
+Patch1:		kdb-3.0.2-pkgconfig.patch
 Summary:	Database connectivity and creation framework
 URL:		http://community.kde.org/KDb/About_KDb
 License:	LGPLv2+
@@ -92,10 +93,11 @@ SQLite support plugin for KDb
 
 %prep
 %setup -q
+%apply_patches
 
 # Build scripts require python 2.x
-ln -s %{_bindir}/python2 python
-export PATH=`pwd`:$PATH
+#ln -s %{_bindir}/python2 python
+#export PATH=`pwd`:$PATH
 
 %cmake_kde5
 
