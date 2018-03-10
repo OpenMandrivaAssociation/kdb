@@ -1,12 +1,13 @@
-%define major 3
+%define major 4
 %define libname %mklibname KDb3 %{major}
 %define devname %mklibname KDb3 -d
+%define olibname %mklibname KDb3 3
 
 Name:		kdb
-Version:	3.0.2
+Version:	3.1.0
 Release:	1
 Source0:	http://download.kde.org/stable/kdb/src/%{name}-%{version}.tar.xz
-Patch1:		kdb-3.0.2-pkgconfig.patch
+#Patch1:		kdb-3.0.2-pkgconfig.patch
 Summary:	Database connectivity and creation framework
 URL:		http://community.kde.org/KDb/About_KDb
 License:	LGPLv2+
@@ -50,6 +51,7 @@ Summary: A database connectivity and creation framework for various databases
 Group: System/Libraries
 Requires: %{name} = %{EVRD}
 Requires: %{name}-plugin = %{EVRD}
+Obsoletes: %{olibname}
 
 %description -n %{libname}
 A database connectivity and creation framework for various databases

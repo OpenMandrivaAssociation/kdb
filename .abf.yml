@@ -1,4 +1,5 @@
 removed_sources:
   kdb-3.0.1.1.tar.xz: 90265f8436fc19136a9ed709fae4e6413f0cfa3b
-sources:
   kdb-3.0.2.tar.xz: d8dc8c65a93408736ccc9b78dcd81a482cbf114b
+sources:
+  kdb-3.1.0.tar.xz: 5dc8275617998cb2c68526883a4670b0de518c55
