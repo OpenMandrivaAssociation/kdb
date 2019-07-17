@@ -4,8 +4,8 @@
 %define olibname %mklibname KDb3 3
 
 Name:		kdb
-Version:	3.1.0
-Release:	2
+Version:	3.2.0
+Release:	1
 Source0:	http://download.kde.org/stable/kdb/src/%{name}-%{version}.tar.xz
 #Patch1:		kdb-3.0.2-pkgconfig.patch
 Summary:	Database connectivity and creation framework
