@@ -1,0 +1,11 @@
+diff -up kdb-3.2.0/KDb.pc.cmake.omv~ kdb-3.2.0/KDb.pc.cmake
+--- kdb-3.2.0/KDb.pc.cmake.omv~	2019-08-22 15:18:50.273276393 +0200
++++ kdb-3.2.0/KDb.pc.cmake	2019-08-22 15:20:14.161533480 +0200
+@@ -7,6 +7,4 @@ Name: @PROJECT_NAME@@PROJECT_STABLE_VERS
+ Description: A database connectivity and creation framework
+ Version: @PROJECT_VERSION@
+ URL: https://community.kde.org/KDb
+-Requires: Qt5Core Qt5Gui Qt5Widgets Qt5Xml icu-lo KF5CoreAddons
+-Libs: -L${libdir}
+-Cflags: -I${includedir}
++Requires: Qt5Core Qt5Gui Qt5Widgets Qt5Xml
