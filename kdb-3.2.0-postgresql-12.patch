@@ -1,0 +1,14 @@
+diff -up kdb-3.2.0/src/drivers/postgresql/PostgresqlTypes.cpp.omv~ kdb-3.2.0/src/drivers/postgresql/PostgresqlTypes.cpp
+--- kdb-3.2.0/src/drivers/postgresql/PostgresqlTypes.cpp.omv~	2019-08-22 10:52:35.174550126 +0200
++++ kdb-3.2.0/src/drivers/postgresql/PostgresqlTypes.cpp	2019-08-22 10:53:14.554646529 +0200
+@@ -70,8 +70,8 @@ void PostgresqlDriver::initPgsqlToKDbMap
+     //! @todo POLYGONOID geometric polygon '(pt1,...)'
+     m_pgsqlToKDbTypes.insert(FLOAT4OID, KDbField::Double);
+     m_pgsqlToKDbTypes.insert(FLOAT8OID, KDbField::Double);
+-    m_pgsqlToKDbTypes.insert(ABSTIMEOID, KDbField::Date);
+-    m_pgsqlToKDbTypes.insert(RELTIMEOID, KDbField::Date);
++    //! removed in postgresql 12:   m_pgsqlToKDbTypes.insert(ABSTIMEOID, KDbField::Date);
++    //! removed in postgresql 12:   m_pgsqlToKDbTypes.insert(RELTIMEOID, KDbField::Date);
+     //! @todo TINTERVALOID (abstime,abstime), time interval
+     //! @todo CIRCLEOID geometric circle '(center,radius)'
+     //! @todo CASHOID monetary amounts, $d,ddd.cc

@@ -5,9 +5,9 @@
 
 Name:		kdb
 Version:	3.2.0
-Release:	1
+Release:	2
 Source0:	http://download.kde.org/stable/kdb/src/%{name}-%{version}.tar.xz
-#Patch1:		kdb-3.0.2-pkgconfig.patch
+Patch0:		kdb-3.2.0-postgresql-12.patch
 Summary:	Database connectivity and creation framework
 URL:		http://community.kde.org/KDb/About_KDb
 License:	LGPLv2+
@@ -25,7 +25,6 @@ BuildRequires:	pkgconfig(mariadb)
 BuildRequires:	pkgconfig(libpq)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5CoreAddons)
-BuildRequires:	python2
 Requires:	%{libname} = %{EVRD}
 
 %description
@@ -94,13 +93,7 @@ Provides: %{name}-plugin = %{EVRD}
 SQLite support plugin for KDb
 
 %prep
-%setup -q
-%apply_patches
-
-# Build scripts require python 2.x
-#ln -s %{_bindir}/python2 python
-#export PATH=`pwd`:$PATH
-
+%autosetup -p1
 %cmake_kde5
 
 %build
@@ -137,3 +130,4 @@ SQLite support plugin for KDb
 %{_libdir}/pkgconfig/*
 %{_libdir}/cmake/KDb3
 %{_libdir}/qt5/mkspecs/modules/qt_KDb3.pri
+%doc %{_docdir}/qt5/*
