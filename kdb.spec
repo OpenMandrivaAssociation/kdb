@@ -97,6 +97,7 @@ SQLite support plugin for KDb
 
 %prep
 %autosetup -p1
+export PATH=%{_libdir}/qt5/bin:$PATH
 %cmake_kde5
 
 %build
