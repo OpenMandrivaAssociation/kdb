@@ -25,6 +25,9 @@ BuildRequires:	pkgconfig(mariadb)
 BuildRequires:	pkgconfig(libpq)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5CoreAddons)
+BuildRequires:	doxygen
+BuildRequires:	graphviz
+BuildRequires:	qt5-assistant
 Requires:	%{libname} = %{EVRD}
 
 %description
