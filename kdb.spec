@@ -10,7 +10,7 @@ Source0:	http://download.kde.org/stable/kdb/src/%{name}-%{version}.tar.xz
 Patch0:		kdb-3.2.0-postgresql-12.patch
 Patch1:		kdb-3.2.0-dont-reference-nonexistant-pkgconfig-files.patch
 Summary:	Database connectivity and creation framework
-URL:		http://community.kde.org/KDb/About_KDb
+URL:		https://community.kde.org/KDb/About_KDb
 License:	LGPLv2+
 Group:		System/Libraries
 BuildRequires:	cmake(ECM)
